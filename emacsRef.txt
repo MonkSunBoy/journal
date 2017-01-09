@@ -1,0 +1,176 @@
+# emacs reference
+
+## BASIC
+	C-v	Move forward one screenful
+	M-v	Move backward one screenful
+	C-l	Clear screen and redisplay all the text,
+		 moving the text around the cursor
+		 to the center of the screen.
+		 (That's CONTROL-L, not CONTROL-1.)
+
+
+## BASIC CURSOR CONTROL
+
+	C-f	Move forward a character
+	C-b	Move backward a character
+
+	M-f	Move forward a word
+	M-b	Move backward a word
+
+	C-n	Move to next line
+	C-p	Move to previous line
+
+	C-a	Move to beginning of line
+	C-e	Move to end of line
+
+	M-a	Move back to beginning of sentence
+	M-e	Move forward to end of sentence
+	M-<	Move to the begining of the whole text
+	M->	Move to the end of the whole text
+	C-u	Give a numeric argument(C-u 8 C-v)
+
+## Stop a commands
+
+       	C-g	Stop command
+
+## WINDOWS
+
+	C-x 1	One window (i.e., kill all other windows).
+
+## INSERTING AND DELETING
+
+	<DEL>        Delete the character just before the cursor
+	C-d   	     Delete the next character after the cursor
+
+	M-<DEL>      Kill the word immediately before the cursor
+	M-d	     Kill the next word after the cursor
+
+	C-k	     Kill from the cursor position to end of line
+	M-k	     Kill to the end of the current sentence
+
+>> Move the cursor to the Y at the start of the previous paragraph.
+>> Type C-<SPC>.  Emacs should display a message "Mark set"
+   at the bottom of the screen.
+>> Move the cursor to the n in "end", on the second line of the
+   paragraph.
+>> Type C-w.  This will kill the text starting from the Y,
+   and ending just before the n.
+
+>> Move the cursor to the beginning of a line which is not empty.
+   Then type C-k to kill the text on that line.
+>> Type C-k a second time.  You'll see that it kills the Newline
+   which follows that line.
+
+>> Kill a line, move around, kill another line.
+   Then do C-y to get back the second killed line.
+   Then do M-y and it will be replaced by the first killed line.
+   Do more M-y's and see what you get.  Keep doing them until
+   the second kill line comes back, and then a few more.
+   If you like, you can try giving M-y positive and negative
+   arguments.
+
+## UNDO
+
+>> C-/, C-_, or C-x u undo the change with undo command
+
+## FILE
+
+	C-x C-f   Find a file
+	C-x C-s   Save the file
+	C-x s     Save some buffers
+	
+## BUFFERS
+
+	C-x C-b   List buffers
+	C-x b TUTORIAL <Return>	come back to buffer
+
+## EXTENDING THE COMMAND SET
+
+	C-x	Character eXtend.  Followed by one character.
+	M-x	Named command eXtend.  Followed by a long name.
+	C-x C-f		Find file
+	C-x C-s		Save file
+	C-x s		Save some buffers
+	C-x C-b		List buffers
+	C-x b		Switch buffer
+	C-x C-c		Quit Emacs
+	C-x 1		Delete all but one window
+	C-x u		Undo
+
+## MODE LINE
+
+>> Type M-x auto-fill-mode <Return> now.  Then insert a line of "asdf "
+   over again until you see it divide into two lines.  You must put in
+   spaces between them because Auto Fill breaks lines only at spaces.
+
+>> Type C-x f with an argument of 20.  (C-u 2 0 C-x f).
+   Then type in some text and see Emacs fill lines of 20
+   characters with it.  Then set the margin back to 70 using
+   C-x f again.
+
+>> Move the cursor into the previous paragraph and type M-q.
+
+## SEARCHING
+
+	C-s		Search string AFTER the current cursor position
+	C-r		Search for something earlier in the text
+
+## MULTIPLE WINDOWS
+
+>> Move the cursor to this line and type C-l C-l.
+
+>> Now type C-x 2 which splits the screen into two windows.
+   Both windows display this tutorial.  The editing cursor stays in
+   the top window.
+
+>> Type C-M-v to scroll the bottom window.
+   (If you do not have a real META key, type <ESC> C-v.)
+
+>> Type C-x o ("o" for "other") to move the cursor to the bottom window.
+>> Use C-v and M-v in the bottom window to scroll it.
+   Keep reading these directions in the top window.
+
+>> Type C-x o again to move the cursor back to the top window.
+   The cursor in the top window is just where it was before.
+
+## MULTIPLE FRAMES
+
+>> Type M-x make-frame <Return>.
+   See a new frame appear on your screen.
+
+>> Type M-x delete-frame <Return>.
+   This removes the selected frame.
+
+## RECURSIVE EDITING LEVELS
+
+>> Type M-x to get into a minibuffer; then type <ESC> <ESC> <ESC> to
+   get out.
+
+## GETTING MORE HELP
+
+   C-h c	Display a very brief description of the command
+
+   C-h f	Describe a function.  You type in the name of the
+		function.
+
+
+   C-h v	displays the documentation of variables,
+       		including those whose values you can set to customize Emacs behavior.
+		You need to type in the name of the variable when Emacs prompts for it.
+
+   C-h a	Command Apropos.  Type in a keyword and Emacs will list
+		all the commands whose names contain that keyword.
+		These commands can all be invoked with META-x.
+		For some commands, Command Apropos will also list a one
+		or two character sequence which runs the same command.
+
+   C-h i	Read included Manuals (a.k.a. Info).  This command puts
+		you into a special buffer called "*info*" where you
+		can read manuals for the packages installed on your system.
+		Type m emacs <Return> to read the Emacs manual.
+		If you have never before used Info, type ? and Emacs
+		will take you on a guided tour of Info mode facilities.
+		Once you are through with this tutorial, you should
+		consult the Emacs Info manual as your primary documentation.
+
+
